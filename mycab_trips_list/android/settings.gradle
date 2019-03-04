@@ -1,0 +1,3 @@
+rootProject.name = 'mycab_trips_list'
+
+include ':app'
