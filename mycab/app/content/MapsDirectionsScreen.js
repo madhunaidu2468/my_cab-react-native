@@ -12,7 +12,7 @@ export default class MapsDirectionsScreen extends Component {
   }
 
   render() {
-    const GOOGLE_MAPS_APIKEY = 'AIzaSyCWY-Vt1Jzdfo5h1VKfBS2NM0EKPOXLHvY';
+    const GOOGLE_MAPS_APIKEY = 'google-api-key';
     return (
       <View style={styles.container}>
         <MapView style={styles.map}

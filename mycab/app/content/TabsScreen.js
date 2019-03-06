@@ -36,7 +36,10 @@ export default class TabsScreen extends Component {
                 </View>
 
                 <View style={styles.rideContainer}>
-                    <TouchableOpacity onPress={() => this.createNewRide()}><Text style={styles.cabTypeButton}>Ride Now</Text>
+                    <TouchableOpacity onPress={() => this.createNewRide()}>
+                    <View >
+                    <Text style={styles.cabTypeButton}>Ride Now</Text>
+                    </View>
                     </TouchableOpacity>
                 </View>
             </View>

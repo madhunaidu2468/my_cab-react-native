@@ -12,7 +12,7 @@ export default class MyHeader extends Component {
             <Image source={require('../icons/menu.png')} style={styles.titleImageLeft}></Image>
           </TouchableOpacity>
 
-          <Text style={styles.titleText}>EmpCab</Text>
+          <Text style={styles.titleText}>My-Cab</Text>
 
           <TouchableOpacity onPress={() => this.props.navigation.navigate('Notifications')}>
             <Image source={require('../icons/bell.png')} style={styles.titleImageRight}></Image>

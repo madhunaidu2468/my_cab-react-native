@@ -51,23 +51,57 @@ export default class MyTripsScreen extends React.Component {
     }
   }
 
-  componentDidMount = () => {
-    fetch('http://192.168.0.103:5000/trip/list')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        this.setState({
-          data: responseJson.list
-        })
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+
 
   constructor() {
     super();
     this.state = {
-      data: []
+      data: [{
+        "date": "2019-01-01",
+        "startTime": "10:00",
+        "endTime": "11:00",
+        "cost": 30,
+        "tripId": 12341,
+        "fromAddress": "No 1, 1st cross, E.city",
+        "toAddress": "Forum mall, B.city",
+        "tripType": "daily",
+        "status": "active",
+        "_id": "3088c15839c245049fa5adcbac5bc496"
+      }, {
+        "date": "2019-01-15",
+        "startTime": "14:00",
+        "endTime": "15:30",
+        "cost": 45,
+        "tripId": 12423,
+        "fromAddress": "colourful office, 1st cross, colourful city",
+        "toAddress": "no 1, abc colony, xyz city",
+        "tripType": "daily",
+        "status": "cancelled",
+        "_id": "3088c15839c245049fa5adcbac5bc496"
+      }, {
+        "date": "2019-01-23",
+        "startTime": "20:00",
+        "endTime": "20:30",
+        "cost": 20,
+        "tripId": 12516,
+        "fromAddress": "no1, 1st lane",
+        "toAddress": "no2, 2nd lane",
+        "tripType": "daily",
+        "status": "active",
+        "_id": "3088c15839c245049fa5adcbac5bc496"
+      }, {
+        "date": "2019-02-01",
+        "startTime": "08:00",
+        "endTime": "10:00",
+        "cost": 55,
+        "tripId": 12631,
+        "fromAddress": "no1, my home",
+        "toAddress": "no2, my office",
+        "tripType": "daily",
+        "status": "completed",
+        "_id": "3088c15839c245049fa5adcbac5bc496"
+      }
+    ]
     }
   }
 
@@ -79,6 +113,7 @@ export default class MyTripsScreen extends React.Component {
           <FlatList
             data={this.state.data}
             renderItem={({ item }) => this.getCustomView(item)}
+            keyExtractor={(item, index) => index.toString()}
           />
         </View>
       </View>

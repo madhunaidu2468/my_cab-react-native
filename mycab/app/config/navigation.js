@@ -137,6 +137,6 @@ const MyStackNavigator = createStackNavigator({
     initialRouteName: 'Login'
   });
 
-const AppContainer = createAppContainer(MyDrawerNavigator);
+const AppContainer = createAppContainer(MyStackNavigator);
 
 export default AppContainer

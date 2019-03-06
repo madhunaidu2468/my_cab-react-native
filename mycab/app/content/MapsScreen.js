@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, Text, TextInput, StyleSheet, Dimensions } from 'react-native';
+import { View, Image, Text, StyleSheet, Dimensions } from 'react-native';
 import MapView, { Callout, Marker } from 'react-native-maps';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
@@ -80,7 +80,7 @@ export default class MapsScreen extends Component {
               }}
               getDefaultValue={() => ''}
               query={{
-                key: 'AIzaSyCWY-Vt1Jzdfo5h1VKfBS2NM0EKPOXLHvY',
+                key: 'google-api-key',
                 language: 'en', // language of the results
               }}
               styles={{

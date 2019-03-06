@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, Button, Text, Switch, TouchableOpacity, TextInput, TouchableHighlight } from 'react-native';
+import { View, Image, Button, Text, Switch, TouchableOpacity, TextInput, TouchableHighlight, ToastAndroid } from 'react-native';
 import styles from '../styles/userdetails-styles';
 import ImagePicker from 'react-native-image-picker';
 
@@ -8,12 +8,12 @@ export default class UserDetailsScreen extends Component {
   constructor() {
     super();
     this.state = {
-      name: "abc xyz",
+      name: "my name",
       age: 21,
       sex: "M",
       rating: 5,
       email: "me@email.com",
-      mobNo: "9845098450",
+      mobNo: "9988776655",
       allowNot: true,
       sendOffers: true,
       nameedit: false,
@@ -28,7 +28,12 @@ export default class UserDetailsScreen extends Component {
   }
 
   updateAction() {
-    alert('Details updated successfully')
+    ToastAndroid.show('Details update successfully!', ToastAndroid.SHORT);
+    this.setState({
+      nameedit: false,
+      emailedit: false,
+      mobNoedit: false,
+    })
   }
 
   updateImage() {
@@ -101,7 +106,7 @@ export default class UserDetailsScreen extends Component {
         </View>
 
         <View style={styles.buttonContainer}>
-          <Button title="Save" disabled={!this.state.nameedit && !this.state.emailedit && !this.state.mobNoedit}></Button>
+          <Button title="Save" onPress={() => this.updateAction()} disabled={!this.state.nameedit && !this.state.emailedit && !this.state.mobNoedit}></Button>
         </View>
       </View>
     )
